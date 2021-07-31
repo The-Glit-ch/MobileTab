@@ -1,26 +1,3 @@
-#To find internal IP on Windows
-#   1. Click on the windows logo(bottom left)
-#   2. Type "control panel" and open it
-#   3. Click on "Network and Internet"
-#   4. Click on "Network and Sharing Center"
-#   5. Look for "Connections:" followed by your network name
-#   6. Click on your network name
-#   7. Click "details" on the little pop up
-#   8. On the new pop up window look for "IPv4 Address". If you use IPv6 look for "IPv6 Address"
-#   9. Take note of the IP and put in the "IP" variable
-#------------------------------------------------------
-#To find internal IP on Mac
-#   1. Click on the Apple icon on the upper-left corner of the screen
-#   2. Select System Preferences
-#   3. Click Network
-#   4. Under "Status" you should see "connected to {wifi-name} and has the IP address {ip}"
-#   5. Take note of the IP and put in the "IP" variable
-#------------------------------------------------------
-#To find IP on Linux
-#   1. Open Terminal
-#   2. Type "hostname -I"
-#   3. Take note of the first IP and put it in the "IP" variable
-#------------------------------------------------------
 try:
     import os,time #Non install
     import asyncio, websockets, ait #Install
@@ -35,7 +12,7 @@ except ImportError:
         os.system(f"cmd /c pip install {i}")
 
 #Info
-__version__ = "1.0.0"
+__version__ = "1.0.1"
 __devURL__  = "https://github.com/The-Glit-ch"
 
 #global
@@ -45,7 +22,6 @@ Right_KeyToggle = False
 Left_KeyToggle = False
 
 #YOU CAN CHANGE ME
-IP = "" #Replace with your internal IP. MAKE SURE ITS PUT IN "". EX: "127.0.0.1"
 PORT = 6969 #Can be replaced with a custom port number
 LeftClickButton = "q" #Can be changed to other keys. Try to stick letters
 RightClickButton = "e" #Can be changed to other keys. Try to stick letters
@@ -92,6 +68,6 @@ listener = keyboard.Listener(
     on_release=on_release)
 listener.start()
 
-asyncio.get_event_loop().run_until_complete(websockets.serve(main, IP, PORT))
+asyncio.get_event_loop().run_until_complete(websockets.serve(main, "", PORT))
 print(f"Mobile Tab(PC) v{__version__}\nMade by The-Glit-ch({__devURL__})")
 asyncio.get_event_loop().run_forever()
