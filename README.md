@@ -24,3 +24,7 @@ MAKE SURE YOUR PC AND PHONE ARE CONNECTED TO THE SAME NETWORK
 5. Click "connect"
 6. You should now see a grey screen with "connected" showing on the top left
 ---
+# Other
+You can use "Q" and "E" keys for left and right click. It can be changed in "main.py" (please stick to letters when changing them)
+
+The default port is 6969. It can be changed in "main.py" (Remember to use open and free ports and not system/in use ports)
