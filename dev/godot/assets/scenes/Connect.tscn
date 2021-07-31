@@ -1,0 +1,92 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://assets/scripts/UI.gd" type="Script" id=1]
+
+[node name="Connect" type="Node2D"]
+script = ExtResource( 1 )
+
+[node name="BG" type="ColorRect" parent="."]
+margin_top = -3.17479
+margin_right = 1024.0
+margin_bottom = 596.825
+color = Color( 0.14902, 0.172549, 0.231373, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="URL" type="Label" parent="."]
+margin_left = 820.0
+margin_top = 580.0
+margin_right = 1015.0
+margin_bottom = 594.0
+text = "https://github.com/The-Glit-ch"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="IPInputText" type="Label" parent="."]
+margin_left = 318.0
+margin_top = 69.0
+margin_right = 548.0
+margin_bottom = 122.0
+rect_scale = Vector2( 1.7, 1.7 )
+text = "Enter in the computer's internal IP"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="IP_Input" type="TextEdit" parent="."]
+margin_left = 318.0
+margin_top = 159.1
+margin_right = 709.0
+margin_bottom = 187.1
+__meta__ = {
+"_edit_use_anchors_": false,
+"_editor_description_": ""
+}
+
+[node name="PortInputText" type="Label" parent="."]
+margin_left = 318.0
+margin_top = 221.908
+margin_right = 548.0
+margin_bottom = 274.908
+rect_scale = Vector2( 1.7, 1.7 )
+text = "Enter in the Port"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Port_Input" type="TextEdit" parent="."]
+margin_left = 318.0
+margin_top = 312.008
+margin_right = 709.0
+margin_bottom = 340.008
+draw_spaces = true
+__meta__ = {
+"_edit_use_anchors_": false,
+"_editor_description_": ""
+}
+
+[node name="Connect_B" type="Button" parent="."]
+margin_left = 366.944
+margin_top = 398.301
+margin_right = 655.944
+margin_bottom = 431.301
+text = "Connect"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Out" type="Label" parent="."]
+margin_left = 30.0
+margin_top = 175.0
+margin_right = 219.0
+margin_bottom = 328.0
+autowrap = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
