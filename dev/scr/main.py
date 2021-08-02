@@ -12,14 +12,8 @@ except ImportError:
         os.system(f"cmd /c pip install {i}")
 
 #Info
-__version__ = "1.0.1"
+__version__ = "1.0.2"
 __devURL__  = "https://github.com/The-Glit-ch"
-
-#global
-global Left_KeyToggle
-global Right_KeyToggle
-Right_KeyToggle = False
-Left_KeyToggle = False
 
 #YOU CAN CHANGE ME
 PORT = 6969 #Can be replaced with a custom port number
@@ -39,29 +33,19 @@ async def main(websocket, path):
 
 #Keyboard listen
 def on_press(key):
-    global Left_KeyToggle #Kinda cringe
-    global Right_KeyToggle #Even more cringe
-
     try:
-        if key.char == LeftClickButton and Left_KeyToggle != True:
+        if key.char == LeftClickButton:
             ms.press(mouse.Button.left)
-            Left_KeyToggle = True
-        elif key.char == RightClickButton and Right_KeyToggle != True:
+        elif key.char == RightClickButton:
             ms.press(mouse.Button.right)
-            Right_KeyToggle = True
     except AttributeError:
         pass
 
 def on_release(key):
-    global Left_KeyToggle #Kinda cringe
-    global Right_KeyToggle #Even more cringe
-    
-    if key == keyboard.KeyCode.from_char(LeftClickButton) and Left_KeyToggle:
+    if key == keyboard.KeyCode.from_char(LeftClickButton):
         ms.release(mouse.Button.left)
-        Left_KeyToggle = False
-    elif key == keyboard.KeyCode.from_char(RightClickButton) and Right_KeyToggle:
+    elif key == keyboard.KeyCode.from_char(RightClickButton):
         ms.release(mouse.Button.right)
-        Right_KeyToggle = False
 
 listener = keyboard.Listener(
     on_press=on_press,
